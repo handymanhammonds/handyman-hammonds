@@ -4,6 +4,7 @@ import { Phone, MessageCircle, ClipboardList, Star, Hammer, Wrench, Paintbrush, 
 import './styles.css';
 import logoSrc from './assets/logo.png';
 import headshot from './assets/headshot.jpeg';
+import work1 from './assets/work1.jpeg';
 import work2 from './assets/work2.jpeg';
 import work3 from './assets/work3.jpeg';
 import work4 from './assets/work4.jpeg';
@@ -32,17 +33,18 @@ const services=[
 ];
 
 const photos=[
-  {src:work2, title:'Dining Room Trim Wall', cat:'Carpentry & Finish Work'},
-  {src:work3, title:'Dining Chandelier Install', cat:'Lighting & Fixtures'},
-  {src:work4, title:'Cabinet Hardware Install', cat:'Cabinet Hardware'},
-  {src:work8, title:'Bathroom Vanity Refresh', cat:'Cabinet Hardware'},
-  {src:work9, title:'Kitchen Island Finish', cat:'Carpentry & Finish Work'},
-  {src:work5, title:'Kitchen Pendant Lighting', cat:'Lighting & Fixtures'},
-  {src:work7, title:'TV Mount & Console', cat:'Assembly & Mounting'},
-  {src:work12, title:'Mudroom Assembly', cat:'Furniture Assembly'},
-  {src:work10, title:'Bedroom Setup', cat:'Home Upgrades'},
-  {src:work11, title:'Garage Storage', cat:'Garage Organization'},
-  {src:work6, title:'Gallery Lighting', cat:'Lighting & Fixtures'},
+  {src:work1, title:'Dining Room Trim Wall', cat:'Carpentry & Finish Work'},
+  {src:work2, title:'Cabinet Hardware Install', cat:'Cabinet Hardware'},
+  {src:work3, title:'Bathroom Vanity Refresh', cat:'Cabinet Hardware & Painting'},
+  {src:work4, title:'Bedroom Remodel', cat:'Home Upgrades'},
+  {src:work5, title:'Kitchen Pendant Lighting', cat:'Light Fixtures'},
+  {src:work6, title:'TV Mount & Console', cat:'Assembly & Mounting'},
+  {src:work7, title:'Media Room Remodel', cat:'Painting & Furniture Assembly'},
+  {src:work8, title:'Garage Shelving', cat:'Furniture Assembly'},
+  {src:work9, title:'Kitchen Hardware', cat:'Cabinet Hardware'},
+  {src:work10, title:'Christmas Decorating', cat:'Outdoor & Seasonal'},
+  {src:work11, title:'Outdoor Lighting', cat:'Outdoor & Seasonal'},
+  {src:work12, title:'Grill Assembly', cat:'Miscellaneous Projects'},
 ];
 
 const reviews=[
@@ -62,7 +64,7 @@ function App(){
     </header>
 
     <main id="home">
-      <section className="hero">
+      <section className="hero" style={{backgroundImage:`linear-gradient(90deg, rgba(5,5,5,.92) 0%, rgba(5,5,5,.78) 48%, rgba(5,5,5,.58) 100%), url(${work5})`}}>
         <div className="heroContent">
           <div className="eyebrow">Goodland based • Serving nearby DFW</div>
           <h1>Hammonds Has It Handled</h1>
@@ -79,7 +81,7 @@ function App(){
         <div className="serviceGrid">{services.map(({title,text,icon:Icon,color})=><div className="serviceCard" key={title}><div className="icon" style={{backgroundColor:color}}><Icon size={34}/></div><h3>{title}</h3><p>{text}</p></div>)}</div>
       </section>
 
-      <section className="split"><div><p className="small">Why choose us</p><h2>Local. Reliable. Trusted.</h2><p>Handyman Hammonds is built for homeowners who care about the details — clean installs, finished spaces, and dependable help close to home.</p><ul><li><CheckCircle/> Clear communication</li><li><CheckCircle/> Quality finish work</li><li><CheckCircle/> On-time and professional</li><li><CheckCircle/> Premium home upgrade experience</li></ul></div><div className="featurePhoto"><img src={work2}/></div></section>
+      <section className="split"><div><p className="small">Why choose us</p><h2>Local. Reliable. Trusted.</h2><p>Handyman Hammonds is built for homeowners who care about the details — clean installs, finished spaces, and dependable help close to home.</p><ul><li><CheckCircle/> Clear communication</li><li><CheckCircle/> Quality finish work</li><li><CheckCircle/> On-time and professional</li><li><CheckCircle/> Premium home upgrade experience</li></ul></div><div className="featurePhoto"><img src={work1}/></div></section>
 
       <section className="section work" id="work"><div className="sectionHead"><p>Recent projects</p><h2>See Our Work</h2><span>Real projects from local homes.</span></div><div className="photoGrid">{photos.map(p=><article className="photoCard" key={p.title}><img src={p.src}/><div><strong>{p.title}</strong><span>{p.cat}</span></div></article>)}</div></section>
 
