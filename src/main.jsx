@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Phone, MessageCircle, ClipboardList, Star, Hammer, Wrench, Paintbrush, Lightbulb, Home, CheckCircle, MapPin, Mail, Drill, PackageCheck, DoorOpen, Sparkles } from 'lucide-react';
+import { Phone, MessageCircle, ClipboardList, Star, Hammer, Wrench, Paintbrush, Lightbulb, Home, CheckCircle, MapPin, Mail, Drill, PackageCheck, Sparkles } from 'lucide-react';
 import './styles.css';
-import logoSrc from './assets/logo-source.jpg';
-import work1 from './assets/work1.jpeg';
+import logoSrc from './assets/logo.png';
+import headshot from './assets/headshot.jpeg';
 import work2 from './assets/work2.jpeg';
 import work3 from './assets/work3.jpeg';
 import work4 from './assets/work4.jpeg';
@@ -43,7 +43,6 @@ const photos=[
   {src:work10, title:'Bedroom Setup', cat:'Home Upgrades'},
   {src:work11, title:'Garage Storage', cat:'Garage Organization'},
   {src:work6, title:'Gallery Lighting', cat:'Lighting & Fixtures'},
-  {src:work1, title:'Art Installation', cat:'Mounting & Decor'},
 ];
 
 const reviews=[
@@ -64,7 +63,6 @@ function App(){
 
     <main id="home">
       <section className="hero">
-        <div className="heroOverlay"></div>
         <div className="heroContent">
           <div className="eyebrow">Goodland based • Serving nearby DFW</div>
           <h1>Hammonds Has It Handled</h1>
@@ -73,6 +71,7 @@ function App(){
           <div className="ctaRow"><a href={`tel:${phoneHref}`} className="btn primary"><Phone size={20}/> Call Now</a><a href={`sms:${phoneHref}?&body=${smsText}`} className="btn green"><MessageCircle size={20}/> Text Now</a><a href="#quote" className="btn ghost"><ClipboardList size={20}/> Get Quote</a></div>
           <div className="trust"><span><Star/> 5.0 Rated</span><span><CheckCircle/> 13 Reviews</span><span><MapPin/> Goodland, TX</span></div>
         </div>
+        <div className="heroLogoWrap"><img src={logoSrc} alt="Handyman Hammonds logo" /></div>
       </section>
 
       <section className="section services" id="services">
@@ -88,7 +87,7 @@ function App(){
 
       <section className="areas"><h2>Serving Goodland & Surrounding Areas</h2><p>Goodland, Midlothian, Mansfield, Waxahachie, Grand Prairie and nearby communities.</p></section>
 
-      <section className="quote" id="quote"><div><p className="small">Get started</p><h2>Request a Quote</h2><p>Call, text, or send the project details. Add photos when you have them so we can understand the scope quickly.</p><div className="contactList"><a href={`tel:${phoneHref}`}><Phone/> {phone}</a><a href={`sms:${phoneHref}?&body=${smsText}`}><MessageCircle/> Text Handyman Hammonds</a><a href="mailto:services@handymanhammonds.com"><Mail/> services@handymanhammonds.com</a></div></div><form className="quoteForm" action="mailto:services@handymanhammonds.com" method="post" encType="text/plain"><input name="Name" placeholder="Name"/><input name="Phone" placeholder="Phone"/><input name="City" placeholder="City"/><select name="Service"><option>Service needed</option>{services.map(s=><option key={s.title}>{s.title}</option>)}</select><textarea name="Project Details" placeholder="Tell us what you need help with"></textarea><button type="submit">Send Quote Request</button><small>For email + text form alerts, connect this form to Formspree + Zapier/Twilio after launch.</small></form></section>
+      <section className="quote" id="quote"><div className="quoteIntro"><img className="quoteHeadshot" src={headshot} alt="Handyman Hammonds"/><p className="small">Get started</p><h2>Request a Quote</h2><p>Call, text, or send the project details. Add photos when you have them so we can understand the scope quickly.</p><div className="contactList"><a href={`tel:${phoneHref}`}><Phone/> {phone}</a><a href={`sms:${phoneHref}?&body=${smsText}`}><MessageCircle/> Text Handyman Hammonds</a><a href="mailto:services@handymanhammonds.com"><Mail/> services@handymanhammonds.com</a></div></div><form className="quoteForm" action="mailto:services@handymanhammonds.com" method="post" encType="text/plain"><input name="Name" placeholder="Name"/><input name="Phone" placeholder="Phone"/><input name="City" placeholder="City"/><select name="Service"><option>Service needed</option>{services.map(s=><option key={s.title}>{s.title}</option>)}</select><textarea name="Project Details" placeholder="Tell us what you need help with"></textarea><button type="submit">Send Quote Request</button><small>For email + text form alerts, connect this form to Formspree + Zapier/Twilio after launch.</small></form></section>
     </main>
 
     <footer><div className="footerBrand"><div className="logoCrop smallLogo"><img src={logoSrc}/></div><strong>Handyman Hammonds</strong></div><p>© 2026 Handyman Hammonds. Goodland, TX.</p></footer>
